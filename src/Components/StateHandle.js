@@ -1,43 +1,44 @@
-import React from 'react';
-import Navbar from './Navbar'
+import React from "react";
+import Navbar from "./Navbar";
+import Properties from "./Properties";
 
-export default class StateHandle extends React.Component{
+export const myContext = React.createContext();
 
-constructor(){
-    super();
-    this.state={
-        status:"This is State in Class Component"
-    }
-//   this.stateHandler=this.stateHandler.bind(this)  
-}
+export default class StateHandle extends React.Component {
+  constructor(){
+      super();
+  this.state = {
+    status: "This is State in Class Component",
+    cnt: 0,
+  };
+    this.stateHandler=this.stateHandler.bind(this)
+  }
 
-stateHandler(){
+  stateHandler() {
     this.setState({
-        status:"The State is Reset "
-    })
+      status: "The State is Reset ",
+      cnt: this.state.cnt + 1,
+    });
+  }
 
+  render() {
+    return (
+      <React.Fragment>
+        <Navbar />
+        <div>StateHandle.js</div>
+        <hr />
+        <h2>This is Under Context Provider</h2>
+        <h3>{this.state.status}</h3>
+        <h3>{this.state.cnt}</h3>
+        <button
+          onClick={this.stateHandler}
+        >
+          Handler
+        </button>
+        <myContext.Provider value={this.state}>
+          <Properties />
+        </myContext.Provider>
+      </React.Fragment>
+    );
+  }
 }
-
-
-render(){
-
-return(
-<React.Fragment>
-<Navbar />
-<h2>{this.state.status}</h2>
-<button onClick={()=>{this.stateHandler()}}>Handler</button>
-</React.Fragment>
-
-)
-}
-
-
-}
-
-
-
-
-
-
-
-

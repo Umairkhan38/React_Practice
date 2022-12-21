@@ -1,18 +1,8 @@
 import React from "react";
+import {myContext} from './StateHandle.js'
 
 
 class Properties extends React.Component{
-
-constructor(){
-    super();
-    this.eventHandle=this.eventHandle.bind(this)
-}
-
-
-eventHandle(){
-    console.log("You Have Added to Cart ");
-    console.log(this)
-}
 
 
 render(){
@@ -20,10 +10,18 @@ render(){
 return(    
 
     <div>
-        <h1>This is Under Props</h1>
-        <h2>{this.props.name}</h2>  
-        <h2>{this.props.msg}</h2>
-        <button onClick={()=>this.eventHandle()}>add to cart</button>
+    <br />
+    <hr />
+    <div>Properties.js</div>
+    <hr />
+        <h2>This is Under Context Consumer</h2>
+        <myContext.Consumer>{
+        data=>{return <div>
+            <h3>status : {data.status}</h3>
+            <p>Count : {data.cnt}</p>
+            </div>
+            }
+        }</myContext.Consumer>
 
     </div>
 

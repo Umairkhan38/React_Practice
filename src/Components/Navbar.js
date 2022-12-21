@@ -19,18 +19,22 @@ class Navbar extends React.Component{
                     <Link to='/Form' style={{ textDecoration: 'none',color:"whitesmoke" }} >Contact</Link>
                 </li>
                 <li>
-                    <Link to='/List' style={{ textDecoration: 'none',color:"whitesmoke"  }} >Lists</Link>
-                </li>
-                <li>
                     <Link to='/StateHandle' style={{ textDecoration: 'none',color:"whitesmoke"  }} >State Handling</Link>
                 </li>
                 <li>
                     <Link to='/lifeCycle' style={{ textDecoration: 'none',color:"whitesmoke"  }} >Life Cycle</Link>
                 </li>
+                <li>
+                    <Link to='/SignUp' style={{ textDecoration: 'none',color:"whitesmoke"  }} >SignUp</Link>
+                </li>
+                <li>
+                    <Link to='/HigherOrder' style={{ textDecoration: 'none',color:"whitesmoke"  }} >Higher Order</Link>
+                </li>
+                <li>
+                    <Link to='/axios' style={{ textDecoration: 'none',color:"whitesmoke"  }} >Axios</Link>
+                </li>
              </ul>   
             </nav>
-
-                 <h1>This is Home Page</h1>
 
             </div>
         )
